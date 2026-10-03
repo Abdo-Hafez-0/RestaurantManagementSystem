@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantManagementSystem.Models
 {
-    internal class MenuItem
+    public class MenuItem
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public double Price { get; set; }
+        public string? Name { get; set; }
+        public decimal Price { get; set; }
         public bool IsAvailable { get; set; }
-        public MenuCategory Category { get; set; }
+        public MenuCategory? Category { get; set; }
     }
 }

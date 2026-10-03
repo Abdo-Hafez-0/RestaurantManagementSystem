@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RestaurantManagementSystem.Models
 {
-    internal class Employee
+    public abstract class Employee
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
     }
 }
