@@ -8,5 +8,11 @@ namespace RestaurantManagementSystem.Models
 {
     public class Waiter : Employee
     {
+        public Waiter(int id, string name) : base(id, name)
+        {
+        }
+
+        public void ServeOrder() => Console.WriteLine($"{GetEmployeeName()} is serving an order.");
+        
     }
 }

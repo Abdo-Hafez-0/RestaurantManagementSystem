@@ -8,5 +8,11 @@ namespace RestaurantManagementSystem.Models
 {
     public class Manager : Employee
     {
+        public Manager(int id, string name) : base(id, name)
+        {
+        }
+
+        public void ManageRestaurant() => Console.WriteLine($"{GetEmployeeName()} is managing the restaurant.");
+       
     }
 }
