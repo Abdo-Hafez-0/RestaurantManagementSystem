@@ -16,6 +16,26 @@ namespace RestaurantManagementSystem
             Console.WriteLine(Order.TotalOrdersCreated);
             Console.WriteLine(RestaurantSettings.CalculateTax(100));
             Console.WriteLine(RestaurantSettings.CalculateServiceCharge(100));
+
+            Waiter w1 = new Waiter();
+            o1.Waiter = w1;
+
+            MenuItem mi1 = new MenuItem("name", 50m);
+            MenuCategory mc1 = new MenuCategory();
+            mi1.MenuCategory = mc1;
+
+            Restaurant r1 = new Restaurant();
+            r1.AddEmployee(w1);
+
+            OrderItem oi1 = new OrderItem(5);
+            o1.AddItem(oi1);
+
+            Console.WriteLine(w1);
+            Console.WriteLine(o1);
+            Console.WriteLine(mi1);
+            Console.WriteLine(mc1);
+            Console.WriteLine(r1);
+            Console.WriteLine(oi1);
         }
     }
 }

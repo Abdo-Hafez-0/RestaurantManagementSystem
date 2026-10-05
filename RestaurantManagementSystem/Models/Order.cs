@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace RestaurantManagementSystem.Models
 {
     public class Order
@@ -41,9 +36,8 @@ namespace RestaurantManagementSystem.Models
 
         public void RemoveItem(OrderItem item)
         {
-            if (!Items.Contains(item))
+            if (!_items.Remove(item))
                 throw new ArgumentException("Item not found.");
-            _items.Remove(item);
         }
     }
 }

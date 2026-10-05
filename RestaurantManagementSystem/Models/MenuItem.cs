@@ -12,7 +12,7 @@ namespace RestaurantManagementSystem.Models
         public string Name { get; private set; }
         public decimal Price { get; private set; }
         public bool IsAvailable { get; private set; }
-        public MenuCategory? Category { get; set; }
+        public MenuCategory? MenuCategory { get; set; }
 
 
         public MenuItem(string name, decimal price)
