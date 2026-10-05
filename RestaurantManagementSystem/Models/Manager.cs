@@ -13,6 +13,11 @@ namespace RestaurantManagementSystem.Models
         }
 
         public void ManageRestaurant() => Console.WriteLine($"{GetEmployeeName()} is managing the restaurant.");
-       
+
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine("Role: Manager");
+        }
     }
 }

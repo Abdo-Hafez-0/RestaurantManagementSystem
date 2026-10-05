@@ -13,5 +13,11 @@ namespace RestaurantManagementSystem.Models
         }
 
         public void ProcessPayment() => Console.WriteLine($"{GetEmployeeName()} is processing a payment.");
+
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine("Role: Cashier");
+        }
     }
 }

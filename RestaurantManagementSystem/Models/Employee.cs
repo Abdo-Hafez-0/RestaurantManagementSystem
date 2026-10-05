@@ -18,7 +18,7 @@ namespace RestaurantManagementSystem.Models
         }
         protected string? GetEmployeeName() => Name;
 
-        public void DisplayInfo()
+        public virtual void DisplayInfo()
         {
             Console.WriteLine($"Id: {Id}");
             Console.WriteLine($"Name: {Name}");

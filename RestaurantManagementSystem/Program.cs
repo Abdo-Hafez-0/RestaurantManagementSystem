@@ -17,7 +17,7 @@ namespace RestaurantManagementSystem
             Console.WriteLine(RestaurantSettings.CalculateTax(100));
             Console.WriteLine(RestaurantSettings.CalculateServiceCharge(100));
 
-            Waiter w1 = new Waiter(1,"Ahmed");
+            Waiter w1 = new Waiter(1, "Ahmed");
             o1.Waiter = w1;
 
             MenuItem mi1 = new MenuItem("name", 50m);
@@ -58,6 +58,21 @@ namespace RestaurantManagementSystem
             {
                 Console.WriteLine(item);
             }
+
+            List<Employee> employees = new()
+            {
+                new Waiter(5, "Mahmod"),
+                new Cashier(6, "Me5imer"),
+                new Manager(7, "Abas")
+            };
+
+            foreach (var emp in employees)
+            {
+                emp.DisplayInfo();
+            }
+
+
+
 
         }
     }

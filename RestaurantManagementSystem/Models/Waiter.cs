@@ -13,6 +13,11 @@ namespace RestaurantManagementSystem.Models
         }
 
         public void ServeOrder() => Console.WriteLine($"{GetEmployeeName()} is serving an order.");
-        
+
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine("Role: Waiter");
+        }
     }
 }
