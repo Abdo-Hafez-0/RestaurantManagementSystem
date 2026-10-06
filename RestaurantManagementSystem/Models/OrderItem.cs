@@ -19,7 +19,15 @@ namespace RestaurantManagementSystem.Models
 
             Quantity = quantity;
         }
+        public OrderItem(OrderItem other)
+        {
+            if (other is null)
+                throw new ArgumentNullException("Order cannot be empty.");
 
+            Id = other.Id;
+            MenuItem = new MenuItem(other.MenuItem.Name, other.MenuItem.Price);
+            Quantity = other.Quantity;
+        }
         public void IncreaseQuantity(int amount)
         {
             if (amount <= 0)

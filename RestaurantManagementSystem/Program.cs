@@ -71,9 +71,28 @@ namespace RestaurantManagementSystem
                 emp.DisplayInfo();
             }
 
+            // Reference Copy
+            Order originalOrder = new Order();
+            Order referenceCopy = originalOrder;
+            Console.WriteLine(ReferenceEquals(originalOrder,referenceCopy));
+            
+            referenceCopy.OrderDate = DateTime.UtcNow;
+            Console.WriteLine(originalOrder.OrderDate);
+
+            Console.WriteLine("-------------------------");
+
+            // Deep Copy
+            Order originalOrder1 = new Order();
+            Order referenceCopy1 = new Order(originalOrder1);
+            Console.WriteLine(ReferenceEquals(originalOrder1,referenceCopy1));
+            
+            referenceCopy1.OrderDate = DateTime.UtcNow;
+            Console.WriteLine(originalOrder1.OrderDate);
 
 
 
+            Order clonedOrder = originalOrder.CloneForModification();
+            Console.WriteLine(ReferenceEquals(originalOrder,clonedOrder));
         }
     }
 }

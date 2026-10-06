@@ -22,6 +22,24 @@ namespace RestaurantManagementSystem.Models
             _totalOrdersCreated = 0;
         }
 
+        public Order(Order other)
+        {
+            if (other is null)
+                throw new ArgumentNullException("Order cannot be empty.");
+            
+            Id = other.Id;
+            OrderDate = other.OrderDate;
+            if(other.Table is not null)
+                Table = new RestaurantTable(other.Table.TableNumber, other.Table.Capacity);
+            if (other.Waiter is not null) 
+                Waiter = new Waiter(Waiter.Id, Waiter.Name);
+            foreach (var item in Items)
+            {
+                _items.Add(new OrderItem(item.Quantity));
+            }
+
+        }
+
         public Order()
         {
             Id = _nextId++;
@@ -38,6 +56,11 @@ namespace RestaurantManagementSystem.Models
         {
             if (!_items.Remove(item))
                 throw new ArgumentException("Item not found.");
+        }
+
+        public Order CloneForModification()
+        {
+            return new Order(this);
         }
     }
 }
