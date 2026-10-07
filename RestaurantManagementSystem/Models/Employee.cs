@@ -4,8 +4,8 @@ namespace RestaurantManagementSystem.Models
     public abstract class Employee
     {
         public int Id { get; private set; }
-        public string? Name { get; private set; }
-
+        public string Name { get; private set; }
+        public abstract string GetRole();
         public Employee(int id, string name)
         {
             if (id <= 0)
@@ -22,6 +22,7 @@ namespace RestaurantManagementSystem.Models
         {
             Console.WriteLine($"Id: {Id}");
             Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Role: {GetRole()}");
 
         }
     }

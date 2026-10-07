@@ -1,7 +1,9 @@
 ﻿
+using RestaurantManagementSystem.Contracts;
+
 namespace RestaurantManagementSystem.Models
 {
-    public class Order
+    public class Order : IOrderService
     {
         public int Id { get; private set; }
         public DateTime OrderDate { get; set; }

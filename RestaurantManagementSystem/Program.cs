@@ -1,4 +1,5 @@
-﻿using RestaurantManagementSystem.Models;
+﻿using RestaurantManagementSystem.Contracts;
+using RestaurantManagementSystem.Models;
 
 namespace RestaurantManagementSystem
 {
@@ -47,7 +48,7 @@ namespace RestaurantManagementSystem
             m2.DisplayInfo();
 
             w2.ServeOrder();
-            c2.ProcessPayment();
+            c2.ProcessPayment(50m);
             m2.ManageRestaurant();
 
             r1.AddEmployee(w2);
@@ -93,6 +94,16 @@ namespace RestaurantManagementSystem
 
             Order clonedOrder = originalOrder.CloneForModification();
             Console.WriteLine(ReferenceEquals(originalOrder,clonedOrder));
+
+
+            IPayable payable = new Cashier(10, "Ahmed");
+            payable.ProcessPayment(500);
+
+
+            IOrderService orderService = originalOrder;
+            OrderItem orderItem = new OrderItem(500);
+            orderService.AddItem(orderItem);
+
         }
     }
 }
