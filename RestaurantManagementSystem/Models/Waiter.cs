@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantManagementSystem.Models.Roles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +9,14 @@ namespace RestaurantManagementSystem.Models
 {
     public class Waiter : Employee
     {
-        public Waiter(int id, string name) : base(id, name)
+        public Waiter(int id, string name) : base(id, name, new WaiterRole())
         {
         }
 
-        public void ServeOrder() => Console.WriteLine($"{GetEmployeeName()} is serving an order.");
+        public void ServeOrder() => Role.PerformDuty();
 
         
 
-        public override string GetRole() => "Waiter";
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using RestaurantManagementSystem.Contracts;
 using RestaurantManagementSystem.Models;
+using RestaurantManagementSystem.Models.Roles;
 using RestaurantManagementSystem.Services;
 
 namespace RestaurantManagementSystem
@@ -95,6 +96,13 @@ namespace RestaurantManagementSystem
             orderService.RemoveItem(order, orderItem);
 
             restaurantService.RemoveEmployee(restaurant, waiter);
+
+
+            waiter.DisplayInfo();
+            cashier.DisplayInfo();
+            manager.DisplayInfo();
+
+
         }
     }
 }
