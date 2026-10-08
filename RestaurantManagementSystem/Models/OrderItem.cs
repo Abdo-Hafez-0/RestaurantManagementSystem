@@ -12,6 +12,17 @@ namespace RestaurantManagementSystem.Models
         public MenuItem? MenuItem { get; set; }
         public int Quantity { get; private set; }
 
+        public OrderItem(MenuItem menuItem, int quantity)
+        {
+            if (menuItem is null)
+                throw new ArgumentNullException(nameof(menuItem));
+            
+            if (quantity <= 0)
+                throw new ArgumentException(nameof(quantity)," must be greater thena 0");
+            
+            MenuItem = menuItem;
+            Quantity = quantity;
+        }
         public OrderItem(int quantity)
         {
             if (quantity <= 0)
